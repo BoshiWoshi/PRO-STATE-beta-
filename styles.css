@@ -1,0 +1,200 @@
+/* ===========================
+   RESET & BODY
+=========================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100%;
+    font-family: 'Press Start 2P', monospace; /* 8-bit vibe */
+    background-color: #000; /* full black background */
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* ===========================
+   MENU CONTAINER
+=========================== */
+.menu {
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* vertical center */
+    align-items: center;     /* horizontal center */
+    height: 100vh;           /* full screen */
+    text-align: center;
+}
+
+/* ===========================
+   TITLE & SUBTITLE
+=========================== */
+.title {
+    font-size: 48px; /* big 8-bit title */
+    color: #00ff00; /* neon green */
+    text-shadow: 2px 2px #0f0, -2px -2px #0f0; /* retro glow effect */
+    margin-bottom: 20px;
+    animation: pulse 1.5s infinite;
+}
+
+.subtitle {
+    font-size: 16px;
+    color: #ffff00; /* yellow 90s pop vibe */
+    text-shadow: 1px 1px #ff0000; /* subtle retro shadow */
+    margin-bottom: 40px;
+}
+
+/* ===========================
+   START BUTTON
+=========================== */
+.start-btn {
+    font-family: "Comic Sans MS", cursive, sans-serif;
+    font-size: 14px;
+    padding: 15px 40px;
+    color: #fff;
+    background-color: #0000ff; /* bright blue */
+    border: 4px solid #ff0000; /* red blocky border */
+    cursor: pointer;
+    margin-bottom: 30px;
+    transition: transform 0.1s, box-shadow 0.1s;
+}
+
+.start-btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 10px #00ffff, 0 0 20px #00ffff;
+}
+
+/* ===========================
+   OPTIONS (MODE / BPM)
+=========================== */
+.option {
+    font-size: 12px;
+    background-color: #ff00ff; /* bright magenta block */
+    padding: 8px 16px;
+    margin-bottom: 30px;
+    border: 3px solid #00ffff; /* cyan border */
+    cursor: pointer;
+    transition: transform 0.1s, box-shadow 0.1s;
+}
+
+.option:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 10px #ffff00, 0 0 15px #ffff00;
+}
+
+/* ===========================
+   FOOTER ICONS
+=========================== */
+.footer {
+    display: flex;
+    gap: 40px;
+    margin-bottom: 20px;
+}
+
+.footer span {
+    font-size: 12px;
+    background-color: #ff9900; /* orange buttons */
+    padding: 6px 12px;
+    border: 2px solid #fff;
+    cursor: pointer;
+    transition: transform 0.1s, box-shadow 0.1s;
+}
+
+.footer span:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 8px #ff00ff;
+}
+
+/* ===========================
+   HINT TEXT
+=========================== */
+.hint {
+    font-size: 10px;
+    color: #00ffff; /* cyan hint text */
+    text-shadow: 1px 1px #ff00ff;
+}
+
+/* ===========================
+   TITLE PULSE ANIMATION
+=========================== */
+@keyframes pulse {
+    0% { text-shadow: 2px 2px #0f0, -2px -2px #0f0; }
+    50% { text-shadow: 4px 4px #0f0, -4px -4px #0f0; }
+    100% { text-shadow: 2px 2px #0f0, -2px -2px #0f0; }
+}
+
+/* ===========================
+   HIDE AUDIO PLAYER
+=========================== */
+#audio,
+#bg-music {
+    display: none; /* completely hidden, still plays */
+}
+
+
+#list-menu {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    text-align: center;
+}
+
+#list-menu h1 {
+    font-size: 36px;
+    color: #00ff00;
+    text-shadow: 2px 2px #0f0, -2px -2px #0f0;
+    margin-bottom: 20px;
+}
+
+#list-menu ul {
+    list-style: none;
+}
+
+#list-menu li {
+    font-size: 20px;
+    color: #ff00ff;
+    padding: 10px 20px;
+    border: 2px solid #00ffff;
+    margin: 10px 0;
+    cursor: pointer;
+    transition: transform 0.1s, box-shadow 0.1s;
+}
+
+#list-menu li:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 10px #ffff00, 0 0 15px #ffff00;
+}
+
+#list-menu .start-btn {
+    margin-top: 30px;
+    background-color: #ff0000; /* red back button */
+    border: 4px solid #00ffff; /* cyan border */
+}
+
+#list-menu .start-btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 10px #ffff00, 0 0 15px #ffff00;
+}
+
+
+#back-btn {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    z-index: 1000;
+    background-color: #ff0000; /* red */
+    border: 4px solid #00ffff; /* cyan border */
+    padding: 10px 20px;
+    font-family: 'Press Start 2P', monospace;
+    cursor: pointer;
+    display: none; /* hidden initially */
+}
+
+#back-btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 10px #ffff00, 0 0 15px #ffff00;
+}

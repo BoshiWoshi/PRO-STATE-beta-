@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pro-state</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/x-icon" href="favicon.png">
+</head>
+
+<body id="body">
+
+    <!-- =========================
+         START SCREEN
+    ======================== -->
+    <div id="start-screen" class="menu">
+        <h1>PRO-STATE</h1>
+        <p>Press ENTER to start</p>
+    </div>
+
+    <!-- =========================
+         MAIN MENU (hidden initially)
+    ======================== -->
+    <header>
+        <div class="menu" id="main-menu" style="display:none;">
+            <h1 class="title" id="title">PRO-STATE</h1>
+            <p class="subtitle" id="undertext">enter the flow state to enhance your prostate</p>
+
+            <button class="start-btn" id="start-btn">START</button>
+
+            <div class="option" id="practice-btn">MODE: <span>PRACTICE</span></div>
+
+            <div class="footer" id="footer">
+                <span>⚙ Settings</span>
+                <span>ⓘ Info</span>
+            </div>
+
+           
+        </div>
+    </header>
+
+    <!-- =========================
+         LIST MENU (hidden initially)
+    ======================== -->
+    <div class="menu" id="list-menu" style="display:none;">
+        <h1>SELECT LEVEL</h1>
+        <ul>
+            <li id="g1">Level 1</li>
+            <li id="g2">Level 2</li>
+            <li id="g3">Level 3</li>
+        </ul>
+    </div>
+
+    <!-- =========================
+         BACK BUTTON (top-left)
+    ======================== -->
+    <button class="start-btn" id="back-btn" style="display:none;">BACK</button>
+
+    <!-- =========================
+         BACKGROUND MUSIC
+    ======================== -->
+    <audio id="bg-music" src="bg-music.mp3" autoplay loop muted></audio>
+
+    <!-- =========================
+         JS
+    ======================== -->
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const startScreen = document.getElementById('start-screen');
+            const mainMenu = document.getElementById('main-menu');
+            const listMenu = document.getElementById('list-menu');
+            const startBtn = document.getElementById('start-btn');
+            const backBtn = document.getElementById('back-btn');
+            const music = document.getElementById('bg-music');
+
+            // ENTER key → show main menu
+            document.addEventListener('keydown', (e) => {
+                if (e.key === "Enter") {
+                    startScreen.style.display = "none";
+                    mainMenu.style.display = "flex";
+                    music.muted = false;
+                    music.volume = 0.3;
+                    music.play().catch(() => console.log("Autoplay blocked"));
+                }
+            });
+
+            // START button → show list menu + show back button
+            startBtn.addEventListener('click', () => {
+                mainMenu.style.display = "none";
+                listMenu.style.display = "flex";
+                backBtn.style.display = "block"; // show back button
+            });
+
+            // BACK button → go back to main menu + hide back button
+            backBtn.addEventListener('click', () => {
+                listMenu.style.display = "none";
+                mainMenu.style.display = "flex";
+                backBtn.style.display = "none"; // hide back button
+            });
+        });
+        // Get level items by ID
+        const g1 = document.getElementById('g1');
+        const g2 = document.getElementById('g2');
+        const g3 = document.getElementById('g3');
+
+// Redirect to corresponding pages when clicked
+g1.addEventListener('click', () => {
+    window.location.href = "music-1.html";
+});
+
+g2.addEventListener('click', () => {
+    window.location.href = "music-2.html";
+});
+
+g3.addEventListener('click', () => {
+    window.location.href = "music-3.html";
+});
+
+
+
+    </script>
+
+</body>
+</html>
